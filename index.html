@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Periodic Table</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <style>
+        .featured-box other-metal-container{
+            height: 100px;
+            width: 100px;
+
+        }
+    </style> -->
+</head>
+<body>
+    <h1 class="title">Periodic Table of Elements</h1>
+    <div class="header-section">
+        <div id="featured-element" class="featured-box other-metal">
+            <div class="top-row">
+                <span id="f-num">31</span>
+                <span id="f-weight">69.723</span>
+            </div>
+            <div id="f-symbol">Ga</div>
+            <div id="f-config">[Ar]3d¹⁰4s²4p¹</div>
+            <div class="bottom-row">
+                <span id="f-name">gallium</span>
+                <span id="f-state">solid</span>
+            </div>
+        </div>
+        <br>
+        <div class="legend">
+            <div class="legend-item alkali">Alkali metals</div>
+            <br>
+            <div class="legend-item alkaline">Alkaline-earth metals</div>
+            <br>
+            <div class="legend-item transition">Transition metals</div>
+        </div>
+    </div>
+
+    <div id="table-container" class="periodic-table"></div>
+    <div id="table-container" class="periodic-table"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

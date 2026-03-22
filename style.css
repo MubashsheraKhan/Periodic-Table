@@ -1,0 +1,86 @@
+:root {
+    --bg: #ffffff;
+    --alkali: #fdbf6f;
+    --alkaline: #fdfd96;
+    --transition: #b1b1f1;
+    --other-metal: #f1b1d1;
+    --other-nonmetal: #f19191;
+    --halogen: #91f1d1;
+    --noble: #d1f1f1;
+    --rare-earth: #e1f191; /* Lanthanoids */
+    --actinoid: #a1d1f1;
+}
+
+body {
+    background-color: #f8f8f8;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.periodic-table {
+    display: grid;
+    grid-template-columns: repeat(18, 65px);
+    grid-template-rows: repeat(10, 85px);
+    gap: 4px;
+    padding: 20px;
+}
+
+.element {
+    grid-column: var(--col);
+    grid-row: var(--row);
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    position: relative;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+/* Apply colors dynamically based on category class */
+.alkali { background-color: var(--alkali); }
+.alkaline { background-color: var(--alkaline); }
+.transition { background-color: var(--transition); }
+.noble-gas { background-color: var(--noble); }
+.rare-earth { background-color: var(--rare-earth); }
+.actinoid { background-color: var(--actinoid); }
+.other-nonmetal { background-color: var(--other-nonmetal); }
+.halogen { background-color: var(--halogen); }
+.other-metal { background-color: var(--other-metal); }
+
+.element:hover {
+    transform: scale(1.2);
+    z-index: 50;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border: 2px solid #000;
+}
+
+.at-num { font-size: 11px; font-weight: bold; }
+.symbol { font-size: 20px; font-weight: bold; text-align: center; margin: 2px 0; }
+.config { font-size: 8px; text-align: center; margin-top: auto; }
+
+/* Tooltip */
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    width: 150px;
+    font-size: 12px;
+    z-index: 100;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.element:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
